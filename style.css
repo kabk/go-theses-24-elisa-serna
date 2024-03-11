@@ -168,12 +168,12 @@ img {
 
   .center-hair {
     text-align: center;
-    margin-top: -2160px;
+    margin-top: -2250px;
     z-index: 1000;
   }
 
   .container-hair img {
-    max-width: 100px;
+    max-width: 150px;
     display: block;
     margin: 0 auto;
     transition: transform 0.8s; /* Add transition for smooth effect */
@@ -193,7 +193,7 @@ img {
   }
 
   .image3 {
-    width: 300px;
+    width: 200px;
     height: auto;
     display: block; /* Ensure it's a block-level element */
     margin: 0 auto; /* Center the image horizontally */
@@ -210,7 +210,7 @@ img {
   }
 
   .container-3 img {
-    max-width: 300px;
+    max-width: 200px;
     display: block;
     margin: 0 auto;
     transition: transform 0.8s; /* Add transition for smooth effect */
@@ -225,7 +225,7 @@ img {
   }
 
   .image4 {
-    width: 300px;
+    width: 400px;
     height: auto;
     display: block; /* Ensure it's a block-level element */
     margin: 0 auto; /* Center the image horizontally */
@@ -242,11 +242,13 @@ img {
   }
 
   .container-4 img {
-    max-width: 200px;
+    max-width: 300px;
     display: block;
     margin: 0 auto;
     transition: transform 0.8s; /* Add transition for smooth effect */
     z-index: 1000;
+    text-align: center;
+    padding-right: 70px;
   }
 
   .container-4:hover {
@@ -303,8 +305,33 @@ img {
     margin: 0 auto; /* Center the image horizontally */
   }
 
+  .center-6 {
+    text-align: center;
+    z-index: 1000;
+  }
+
   .container-6:hover img {
-    transform: scale(15); /* Scale the image to 1.2 times its original size on hover */
+    transform: scale(2); /* Scale the image to 1.2 times its original size on hover */
+    z-index: 1000;
+  }
+
+  .container-6 img {
+    max-width: 300px;
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.8s; /* Add transition for smooth effect */
+    z-index: 1000;
+    text-align: center;
+  }
+
+  .container-6:hover {
+    display: inline-block;
+    vertical-align: middle;
+    z-index: 1000;
+  }
+
+  .container-6:hover img {
+    transform: scale(6); /* Scale the image to 1.2 times its original size on hover */
     z-index: 1000;
   }
 
@@ -364,7 +391,11 @@ img {
 .Times {
   font-family: 'Times New Roman', Times, serif;
   font-weight: lighter;
-  font-size: 20px;
+  font-size: 2.5vh;
+  text-align: center;
+  margin-right: 30em;
+  margin-left: -10em;
+  padding-left: 30em;
 }
 
 .samantha {
@@ -494,7 +525,6 @@ h2{
   color: #ffffff;
   font-size: 90px;
   width: 100%;
-  margin: 0;
   padding-left: 0px;
   text-align: center;
 }
@@ -561,6 +591,7 @@ nav {
   padding-bottom: 10px; /* Add padding */
   padding-right: 0px; /* Add padding */
   z-index: 1000; /* Ensure it's above other content */
+
 }
 
 nav ul {
@@ -572,8 +603,9 @@ nav ul {
 }
 
 nav a {
-  text-decoration: none;
   color: #7e8c37; /* Set text color */
+  text-decoration: underline;
+  text-decoration-color:#7e8c37 ;
 }
 
 header {
