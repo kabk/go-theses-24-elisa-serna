@@ -1,0 +1,722 @@
+@charset "UTF-8";
+
+
+
+/* @FONT FACE (enable the use of 'custom fonts' inside your document) */
+
+/* 
+  You can use 'fontsquirrel' (https://www.fontsquirrel.com) 
+  or 'transfonter' (https://transfonter.org)
+  to generate your own font for the web from .ttf or .oft files 
+*/
+
+@font-face {
+  font-family: 'Lineal';
+  src: url('assets/fonts/lineal-main/fonts/Static/OTF/Lineal-Regular.otf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Lineal-Bold';
+  src: url('assets/fonts/lineal-main/fonts/Static/TTF/Lineal-Bold.ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Urbanist-Italic';
+  src: url('assets/fonts/Urbanist/static/Urbanist-Italic.ttf');
+  font-weight: normal;
+  font-style: italic;
+  font-display: block;
+}
+
+@font-face {
+    font-family: 'Aptos';
+    src: url('assets/fonts/aptos.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+@font-face {
+    font-family: 'Workbench';
+    src: url('assets/fonts/Workbench/static/Workbench-Regular.ttf');
+    font-weight: normal;
+    font-style: italic;
+    font-display: block;
+}
+
+@font-face {
+  font-family: 'Times New Roman';
+  src: url('assets/fonts/TimesNewRoman/Times\ New\ Roman.ttf');
+  font-weight: normal;
+  font-style: bold;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'League Spartan';
+  src: url('assets/fonts/LeagueSpartan/static/OTF/LeagueSpartan-Regular.otf');
+  font-weight: normal;
+  font-style: bold;
+  font-display: block;
+}
+
+
+
+/* VARIABLES */
+
+
+
+:root {
+  /* Color values */
+  --color-background: #000000;
+  --color-text: #e3dfdf;
+  --color-text-link:#b42e31;
+  --color-text-link-hover: rgb(255, 255, 255);
+  /* Font values */
+  --font-size: 10px;
+}
+
+
+/* GENERAL STYLES */
+
+html {
+  font: var(--font-size) var(--font-family);
+  color: var(--color-text);
+  background-color: var(--color-background);
+}
+
+body {
+  position:relative;
+  background-color: var(--color-background);
+  font: var(--font-size) var(--font-family);
+  color: var(--color-text);
+  width: 100%;
+  height: auto;
+  overflow-y: auto;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.title-container {
+   position: absolute;
+   top: 450px; /* Adjust distance from top */
+   left: 50%;
+   transform: translateX(-50%);
+   text-align: center;
+   width: 100%;
+   z-index: 1; /* Ensures the title appears above the video */
+   color: #ffffff; /* Set title text color */
+   font-size: 24px; /* Adjust title font size */
+   mix-blend-mode: exclusion;
+}
+
+#video-container {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Adjust height as needed */
+  overflow: hidden;
+  z-index: 0;
+}
+
+video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  opacity: 100%;
+  z-index: 0;
+}
+
+.gradient-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px; /* Adjust the height of the gradient fade */
+  background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,1)); /* Adjust the gradient colors */
+  pointer-events: none; /* Ensure the overlay doesn't interfere with mouse events on the video */
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  z-index: -1; /* Send the image to the background */
+}
+
+.container-ass {
+  position: absolute;
+  top: 800px; /* Adjust the value to move the image up */
+  left: 0;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  z-index: -1;
+  padding-top: 10px;
+}
+
+  .center-hair {
+    text-align: center;
+    margin-top: -2160px;
+    z-index: 1000;
+  }
+
+  .container-hair img {
+    max-width: 100px;
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.8s; /* Add transition for smooth effect */
+    z-index: 1000;
+  }
+
+  .container-hair:hover img {
+    transform: scale(15); /* Scale the image to 1.2 times its original size on hover */
+    z-index: 1000;
+  }
+
+  .container-hair {
+    display: inline-block;
+    vertical-align: middle;
+    padding-right: 100px;
+    z-index: 1000;
+  }
+
+  .image3 {
+    width: 300px;
+    height: auto;
+    display: block; /* Ensure it's a block-level element */
+    margin: 0 auto; /* Center the image horizontally */
+  }
+
+  .center-3 {
+    text-align: center;
+    z-index: 1000;
+  }
+
+  .container-3:hover img {
+    transform: scale(5); /* Scale the image to 1.2 times its original size on hover */
+    z-index: 1000;
+  }
+
+  .container-3 img {
+    max-width: 300px;
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.8s; /* Add transition for smooth effect */
+    z-index: 1000;
+  }
+
+  .container-3 {
+    display: inline-block;
+    vertical-align: middle;
+    padding-right: 100px;
+    z-index: 1000;
+  }
+
+  .image4 {
+    width: 300px;
+    height: auto;
+    display: block; /* Ensure it's a block-level element */
+    margin: 0 auto; /* Center the image horizontally */
+  }
+
+  .center-4 {
+    text-align: center;
+    z-index: 1000;
+  }
+
+  .container-4:hover img {
+    transform: scale(2); /* Scale the image to 1.2 times its original size on hover */
+    z-index: 1000;
+  }
+
+  .container-4 img {
+    max-width: 200px;
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.8s; /* Add transition for smooth effect */
+    z-index: 1000;
+  }
+
+  .container-4:hover {
+    display: inline-block;
+    vertical-align: middle;
+    z-index: 1000;
+  }
+
+  .container-4:hover img {
+    transform: scale(6); /* Scale the image to 1.2 times its original size on hover */
+    z-index: 1000;
+  }
+
+  .image5 {
+    width: 200px;
+    height: auto;
+    display: block; /* Ensure it's a block-level element */
+    margin: 0 auto; /* Center the image horizontally */
+  }
+
+  .center-5 {
+    text-align: center;
+    z-index: 1000;
+  }
+
+  .container-5:hover img {
+    transform: scale(2); /* Scale the image to 1.2 times its original size on hover */
+    z-index: 1000;
+  }
+
+  .container-5 img {
+    max-width: 200px;
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.8s; /* Add transition for smooth effect */
+    z-index: 1000;
+  }
+
+  .container-5:hover {
+    display: inline-block;
+    vertical-align: middle;
+    z-index: 1000;
+  }
+
+  .container-5:hover img {
+    transform: scale(6); /* Scale the image to 1.2 times its original size on hover */
+    z-index: 1000;
+  }
+
+  .image6 {
+    width: 200px;
+    height: auto;
+    display: block; /* Ensure it's a block-level element */
+    margin: 0 auto; /* Center the image horizontally */
+  }
+
+  .container-6:hover img {
+    transform: scale(15); /* Scale the image to 1.2 times its original size on hover */
+    z-index: 1000;
+  }
+
+.air {
+  margin-right: 100px; /* Adjust the margin to introduce space between elements */
+}
+
+.toright {
+  display: block;
+  text-align: right;
+}
+
+.centered-text {
+  text-align: center;
+  padding-right: 40%;
+}
+
+.italic-footer {
+  font-family: 'Aptos';
+  font-style: italic;
+  font-size: 14px;
+}
+
+.italic-text {
+  font-family: 'Aptos';
+  font-style: italic;
+  font-size: 20px;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.center {
+  text-align: center;
+}
+
+.regular {
+  font-family: 'Aptos';
+  font-style: normal;
+  font-size: 20px;
+}
+
+.right-lighter {
+  text-align: right;
+  padding-left: 10%;
+  font-family: 'Urbanist-Italic', sans-serif, italic;
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.normal-text {
+  padding-left: 16.6%;
+  line-height: inherit; 
+}
+
+.Times {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: lighter;
+  font-size: 20px;
+}
+
+.samantha {
+  height: auto; /* Set height to auto to maintain aspect ratio */
+  width: 50%; /* Adjust width as needed */
+  margin: 0 auto; /* Center horizontally */
+  display: flex;
+  flex-direction: column; /* Ensure the footer appears below the image */
+}
+
+.samantha img {
+  display: block; /* Ensure the image fills the container width */
+  margin: 0 auto; /* Center horizontally */
+}
+
+.stacked-images {
+  width: 200px; /* Adjust the width as needed */
+  position: absolute; /* Ensure positioning context for absolute positioning */
+  right: 100px;
+  padding-top: 15px;
+  overflow: hidden; /* Hide overflowing content */
+}
+
+.image-container {
+  transition: max-height 1s ease; /* Apply transition effect */
+  max-height: auto; /* Allow the first image to be fully visible */
+  overflow: hidden; /* Hide overflowing content */
+}
+
+.stacked-images .image-container:not(:first-child) {
+  max-height: 0; /* Initially hide images */
+}
+
+.stacked-images:hover .image-container {
+  max-height: 500px; /* Set to a value greater than the total height of images */
+}
+
+.stacked-images img {
+  width: 100%; /* Adjust image width to fill container */
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: 20px; /* Adjust the bottom margin to create space between images */
+  opacity: 100%;
+}
+
+.footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  text-align: center; /* Center align text */
+  padding: 10px;
+  box-sizing: border-box; /* Include padding in width calculation */
+  margin-top: auto;
+}
+
+.footer-text {
+  margin: 0; /* Remove default margin */
+  text-align: center; /* Center align text */
+  font-size: 14px; /* Example font size */
+  color: #d2d2d2; /* Example text color */
+}
+
+.container {
+  position: relative; /* Ensure positioning context for absolute positioning */
+  display: flex;
+  max-width: 800px; /* Adjust this value as needed */
+  margin: 0 auto;
+  flex-direction: column;
+}
+
+p {
+  margin-top: 0; /* Remove default margin */
+  z-index: 1;
+  text-shadow: 2px 2px 4px #000000;
+  padding: 0;
+  font-family: 'Aptos';
+  font-size: 20px;
+  margin-left: 15rem;
+  margin-right: 22rem;
+}
+
+a {
+  color: var(--color-text-link);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-text-link-hover);
+  text-decoration: none;
+}
+
+img {
+  z-index: 2;
+  text-align: right;
+}
+
+.IMAGINARY-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.IMAGINARY {
+  width: 50%; /* Each image takes up 48% of the container width */
+  box-sizing: border-box; /* Include padding and border in the width */
+  margin: 0 -6%; /* Adjust the margin to reduce the gap between columns */
+  padding: 10px; /* Add some padding between images */
+  text-align: center;
+}
+
+.IMAGINARY img {
+  max-width: 70%;
+  height: auto;
+}
+
+h1{
+  font-family: "Lineal-Bold";
+  color: #dbdbdb;
+  font-size: 250px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+h2{
+  font-family: "Lineal";
+  color: #ffffff;
+  font-size: 90px;
+  width: 100%;
+  margin: 0;
+  padding-left: 0px;
+  text-align: center;
+}
+
+#italicize:hover {
+    font-style: italic;
+}
+
+.indented-paragraph {
+  padding-left: 90px; /* Adjust the value according to your preference */
+  font-size: 20px;
+}
+
+h3, h4, h5, h6 {
+  font-family: "Lineal";
+  font-size: 90px;
+  margin-top: -50px;
+  margin-bottom: 15px;
+  margin-right: 17rem;
+  margin-left: 17rem;
+  text-align: center;
+  z-index: 1;
+}
+
+.verde {
+  color: #57af43;
+}
+
+hr{
+
+}
+
+ol, ul{
+  /* ordered list and unordered list styles */
+}
+
+blockquote{
+  /* blockquote element style */
+}
+
+hr{
+  /* horizontal rule style */
+}
+
+
+
+/* PAGE STYLES */
+
+/* page structure */
+
+div.page-wrapper {
+  /* the element that 'wraps' everything */
+  padding: var(--margin);
+}
+
+/* navigation */
+nav {
+  position: sticky; /* Make the header sticky */
+  top: 0; /* Stick the header to the top of the viewport */
+  font-family: "Lineal";
+  font-size: 20px;
+  background-color: #000000; /* Set background color */
+  padding-top: 10px; /* Add padding */
+  padding-bottom: 10px; /* Add padding */
+  padding-right: 0px; /* Add padding */
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+nav ul {
+  display: flex; /* Use flexbox */
+  justify-content: space-around; /* Align items horizontally */
+  list-style: none;
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}
+
+nav a {
+  text-decoration: none;
+  color: #7e8c37; /* Set text color */
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+.container-index {
+  border: 2px solid #7e8c37; /* Set border width and color */
+  border-radius: 5px; /* Add rounded corners */
+  height: 50px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+#index {
+  position: sticky;
+  top: 0;
+  background-color: #000000; /* Example background color */
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+#source-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999; /* Ensure it's on top of other elements */
+  border: 2px solid #ffffff;
+  border-radius: 5px;
+  padding: 5px;
+  font-family: 'Lineal';
+  background-color: #000000;
+  mix-blend-mode: exclusion;
+}
+
+#source-toggle *,
+#source-content * {
+  mix-blend-mode: exclusion;
+}
+
+#source-toggle a {
+  background-color: #000000;
+  color: #b42e31;
+  border: 2px solid #ffffff;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+#source-content {
+  position: fixed;
+  bottom: 120px;
+  right: 20px;
+  width: 300px; /* Adjust as needed */
+  max-height: 300px; /* Adjust as needed */
+  background-color: #000000;
+  border: 2px solid #ffffff;
+  border-radius: 5px;
+  overflow-y: auto;
+  padding: 10px;
+  display: none;
+}
+
+#source-content p {
+  width: 100%;
+  margin-bottom: 10px;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-left: 0; /* Remove left margin */
+}
+
+#toggle-source:checked ~ #source-content {
+  display: block; /* Show the content when checkbox is checked */
+}
+
+/* UTILITY CLASSES */
+
+/* hide desktop mobile etc */
+
+.desktop-only {
+  display: block;
+}
+
+.mobile-only {
+  display: none;
+}
+
+
+
+
+
+/* WEBSITE MEDIA QUERIES */
+
+/* styles for 'mobile', screen sizes up to 779px, should covers 'mobile' and 'tablet' */
+/* style this one first and then use the subsequent ones in a cascading way (from general to specific) */
+
+@media (max-width: 779px) {
+
+  /* your 'mobile' overriding css properties here */
+
+
+
+  /* utility classes, mobile */
+
+  .desktop-only{
+    display:none;
+  }
+
+  .mobile-only{
+    display:block;
+  }
+
+}
+
+
+
+/* use this query to apply style changes to smaller smartphones sizes (like an iPhone 5S or SE 2016), max size of 339px */
+
+@media (max-width: 339px) {
+
+  /* your overriding css properties here */
+
+}
+
+
+
+/* use this query to apply style changes for 'mobile' screen sizes that are flipped in 'landscape' mode */
+
+@media (max-width: 779px) and (orientation: landscape) {
+
+   /* your overriding css properties here */
+
+}
+
+
+
+/* use this query to apply style for 'small' desktop screens */
+
+@media (min-width: 780px) and (max-width: 992px) {
+
+  /* your overriding css properties here */
+
+}
