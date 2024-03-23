@@ -681,7 +681,6 @@ html {
   font: var(--font-size) var(--font-family);
   color: var(--color-text);
   background-color: var(--color-background);
-  height:-webkit-fill-available;
 }
 
 body {
@@ -935,8 +934,8 @@ h2{
   font-family: "Lineal";
   color: #ffffff;
   font-size: 10rem;
-  width: 100vw; /* Cover the entire viewport width */
-  height: 100vh; /* Cover the entire viewport height */
+  width: 100%; /* Cover the entire viewport width */
+  /* height: 100vh; */
   margin: 0; /* Remove any default margin */
   padding: 0; /* Remove any default padding */
   text-align: left;
