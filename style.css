@@ -675,6 +675,41 @@ header {
     display:block;
   }
 
+  :root {
+    /* Color values */
+    --color-background: #000000;
+    --color-text: #e3dfdf;
+    --color-text-link:#b42e31;
+    --color-text-link-hover: rgb(255, 255, 255);
+    /* Font values */
+    --font-size: 10px;
+  }
+
+  html {
+    font: var(--font-size) var(--font-family);
+    color: var(--color-text);
+    background-color: var(--color-background);
+  }
+  
+  body {
+    position: relative;
+    background-color: var(--color-background);
+    font: var(--font-size) var(--font-family);
+    color: var(--color-text);
+    width: 100%;
+    height: auto;
+    overflow-y: auto;
+  }
+  
+  .title-container {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    z-index: 1; /* Ensures the title appears above the video */
+    color: #ffffff; /* Set title text color */
+    font-size: 24px; /* Adjust title font size */
+ }
+
 }
 
 
