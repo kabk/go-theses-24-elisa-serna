@@ -711,13 +711,13 @@ body, html {
    position: relative;
    top: 28.125rem; /* Adjust distance from top */
    left: 50%;
-   transform: translateX(-50%);
+   /* transform: translateX(-50%); */
    text-align: center;
    width: 100%;
    z-index: 1; /* Ensures the title appears above the video */
    color: #ffffff; /* Set title text color */
-   font-size: 1.5rem; /* Adjust title font size */
-   mix-blend-mode: exclusion;
+   font-size: 20px; /* Adjust title font size */
+   /* mix-blend-mode: exclusion; */
 }
 
 #video-container {
