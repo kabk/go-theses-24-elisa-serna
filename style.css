@@ -658,7 +658,7 @@ header {
 /* styles for 'mobile', screen sizes up to 779px, should covers 'mobile' and 'tablet' */
 /* style this one first and then use the subsequent ones in a cascading way (from general to specific) */
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
 
   /* your 'mobile' overriding css properties here */
   
@@ -709,6 +709,37 @@ header {
     color: #ffffff; /* Set title text color */
     font-size: 24px; /* Adjust title font size */
  }
+
+ #video-container {
+  position: relative;
+  width: 100%;
+  z-index: 0;
+}
+
+video {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 0;
+}
+
+.gradient-overlay {
+  position: relative;
+  width: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,1)); /* Adjust the gradient colors */
+}
+
+.air {
+  margin-right: 100px; /* Adjust the margin to introduce space between elements */
+}
+
+p {
+  z-index: 1;
+  font-family: 'Aptos';
+  font-size: 15px;
+}
 
 }
 
