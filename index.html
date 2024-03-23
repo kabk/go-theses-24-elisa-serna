@@ -36,17 +36,17 @@
 	    
 	</head>
 
-	<body class="content">
+	<body>
         <div id="video-container">
             <video autoplay muted loop>
-                <source src="assets/visualessay_website.mp4" type="video/mp4">
+                <source src="assets/images/visualessay_website.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
             
             <div class="gradient-overlay"></div>
         
             <div class="title-container" id="title">
-                <h1>CÍR<span id="italicize">CULOS</span></h1>
+                <h1><span id="disappear">CÍR</span>CULOS</h1>
             </div>
         </div>
         
@@ -80,32 +80,32 @@
         
             // Initial setup to start the fade-out animation after the specified delay
             var timer = setTimeout(startFadeOut, fadeDelay);
-        </script>        
-        
+        </script>
 
 		<div class="page-wrapper">
 
-            <header>
-                  <div class="nav-container">
-                    <nav class="container-index" id="index">
-                        <ul>
-                            <li><a href="#intro">THE NOTHING</a></li>
-                            <li><a href="#chapter-1">STRATEGIES</a></li>
-                            <li><a href="#chapter-2">STRAIGHT OFF THE DOME</a></li>
-                            <li><a href="#chapter-3">POSTURAL CONTROL</a></li>
-                            <li><a href="#chapter-4">BODY PALIMPSEST</a></li>
-                            <li><a href="#chapter-5">CULEANDO AL SISTEMA</a></li>
-                            <li><a href="#chapter-6">GOING FORWARD, A NEW IMAGINARY</a></li>
-                      
-                        </ul>
-                    </nav>
-                </div>  
-            </header>
+            <!-- Toggle button for index content -->
+            <div class="menu-toggle">
+                <input type="checkbox" id="toggle-index" display="none">
+                <label for="toggle-index" id="index-toggle">INDEX</label>
+            </div>
+
+            <nav id="mobile-nav">
+                <ul>
+                    <li><a href="#intro">THE NOTHING</a></li>
+                    <li><a href="#chapter-1">STRATEGIES</a></li>
+                    <li><a href="#chapter-2">STRAIGHT OFF THE DOME</a></li>
+                    <li><a href="#chapter-3">POSTURAL CONTROL</a></li>
+                    <li><a href="#chapter-4">BODY PALIMPSEST</a></li>
+                    <li><a href="#chapter-5">CULEANDO AL SISTEMA</a></li>
+                    <li><a href="#chapter-6">GOING FORWARD, A NEW IMAGINARY</a></li>
+                </ul>
+            </nav>
 
 			<main>
 
                 <div class="container-ass">
-                    <img src="assets/image1.png">
+                    <img src="/Users/elisa/Desktop/go-theses-24-elisa-serna/assets/images/image1.png">
                 </div>
                 <br>
                 <br>
@@ -126,7 +126,7 @@
                 <br>
                 <br>
                 <br>
-                <br> <br>
+                <br> 
                 <br>
                 <br>
                 <br>
@@ -140,7 +140,9 @@
                 <br>
                 <br>
                 <br>
-                <br> <br>
+                <br>
+                <br> 
+                <br>
                 <br>
                 <br>
                 <br>
@@ -304,7 +306,7 @@
                     <br>
                     <div class="center-6" id="container-6">
                         <div class="container-6">
-                            <img src="assets/images/image6.png">
+                            <img src="/Users/elisa/Desktop/go-theses-24-elisa-serna/assets/images/image6.png">
                         </div>
                     </div>
                 </p>
@@ -625,7 +627,6 @@
                     </div>
                 </div>
 
-                <input type="checkbox" id="toggle-source" style="display: none">
                 <label for="toggle-source" id="source-toggle">SOURCES</label>
 
                     <div id="source-content">
@@ -674,44 +675,17 @@
 		</div>
 
         <script>
-            const title = document.getElementById('title-container');
-            const container = document.getElementById('video-container');
-        
-            container.addEventListener('mousemove', (e) => {
-                const mouseX = e.clientX;
-                const mouseY = e.clientY;
-        
-                title.style.left = mouseX + 'px';
-                title.style.top = mouseY + 'px';
+            // Get the toggle checkbox and mobile navigation
+            const toggleIndex = document.getElementById('toggle-index');
+            const mobileNav = document.getElementById('mobile-nav');
+
+            // Add event listener to toggle checkbox
+            toggleIndex.addEventListener('change', function() {
+                // Toggle display of mobile navigation based on checkbox state
+                mobileNav.style.display = this.checked ? 'block' : 'none';
             });
             
         </script>
-
-<!-- <script>
-    const title = document.getElementById('title-container');
-    const container = document.getElementById('video-container');
-    const centerX = container.offsetWidth / 2;
-    const centerY = container.offsetHeight / 2;
-    const radius = 100; // Radius of the circle
-    let angle = 0;
-
-    function animateTitle() {
-        const offsetX = Math.cos(angle) * radius;
-        const offsetY = Math.sin(angle) * radius;
-
-        title.style.left = centerX + offsetX + 'px';
-        title.style.top = centerY + offsetY + 'px';
-
-        angle += 0.05; // Adjust speed of movement
-
-        requestAnimationFrame(animateTitle);
-    }
-
-    animateTitle();
-</script>
-
-		<-- end webpage content -->
-
 
 
 	</body>

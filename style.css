@@ -27,26 +27,10 @@
 }
 
 @font-face {
-  font-family: 'Urbanist-Italic';
-  src: url('assets/fonts/Urbanist/static/Urbanist-Italic.ttf');
-  font-weight: normal;
-  font-style: italic;
-  font-display: block;
-}
-
-@font-face {
     font-family: 'Aptos';
     src: url('assets/fonts/aptos.ttf');
     font-weight: normal;
     font-style: normal;
-    font-display: block;
-}
-
-@font-face {
-    font-family: 'Workbench';
-    src: url('assets/fonts/Workbench/static/Workbench-Regular.ttf');
-    font-weight: normal;
-    font-style: italic;
     font-display: block;
 }
 
@@ -57,16 +41,6 @@
   font-style: bold;
   font-display: block;
 }
-
-@font-face {
-  font-family: 'League Spartan';
-  src: url('assets/fonts/LeagueSpartan/static/OTF/LeagueSpartan-Regular.otf');
-  font-weight: normal;
-  font-style: bold;
-  font-display: block;
-}
-
-
 
 /* VARIABLES */
 
@@ -379,7 +353,7 @@ img {
   text-align: right;
   padding-left: 10%;
   font-family: 'Urbanist-Italic', sans-serif, italic;
-  font-size: 17px;
+  font-size: 1em;
   line-height: 1.5;
 }
 
@@ -529,8 +503,9 @@ h2{
   text-align: center;
 }
 
-#italicize:hover {
-    font-style: italic;
+#disappear:hover {
+    opacity: 0%;
+    transition: opacity 0.5s ease;
 }
 
 .indented-paragraph {
@@ -552,24 +527,6 @@ h3, h4, h5, h6 {
 .verde {
   color: #57af43;
 }
-
-hr{
-
-}
-
-ol, ul{
-  /* ordered list and unordered list styles */
-}
-
-blockquote{
-  /* blockquote element style */
-}
-
-hr{
-  /* horizontal rule style */
-}
-
-
 
 /* PAGE STYLES */
 
@@ -681,7 +638,7 @@ header {
 }
 
 #toggle-source:checked ~ #source-content {
-  display: block; /* Show the content when checkbox is checked */
+  display: none; /* Show the content when checkbox is checked */
 }
 
 /* UTILITY CLASSES */
@@ -696,19 +653,448 @@ header {
   display: none;
 }
 
-
-
-
-
 /* WEBSITE MEDIA QUERIES */
 
 /* styles for 'mobile', screen sizes up to 779px, should covers 'mobile' and 'tablet' */
 /* style this one first and then use the subsequent ones in a cascading way (from general to specific) */
 
-@media (max-width: 779px) {
+@media only screen and (max-width: 700px) {
 
   /* your 'mobile' overriding css properties here */
+  
+/* VARIABLES */
 
+:root {
+  /* Color values */
+  --color-background: #000000;
+  --color-text: #e3dfdf;
+  --color-text-link:#b42e31;
+  --color-text-link-hover: rgb(255, 255, 255);
+  /* Font values */
+  --font-size: 0.625;
+}
+
+
+/* GENERAL STYLES */
+
+html {
+  font: var(--font-size) var(--font-family);
+  color: var(--color-text);
+  background-color: var(--color-background);
+  height:-webkit-fill-available;
+}
+
+body {
+  position:absolute;
+  background-color: var(--color-background);
+  font: var(--font-size) var(--font-family);
+  color: var(--color-text);
+  width: 100vh;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  /* height: 100%; */
+}
+
+.main {
+  flex: 1;
+  overflow: scroll;
+}
+
+.title-container {
+   position: relative;
+   top: 28.125rem; /* Adjust distance from top */
+   left: 50%;
+   transform: translateX(-50%);
+   text-align: center;
+   width: 100%;
+   z-index: 1; /* Ensures the title appears above the video */
+   color: #ffffff; /* Set title text color */
+   font-size: 1.5rem; /* Adjust title font size */
+   mix-blend-mode: exclusion;
+}
+
+#video-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh; /* Adjust height as needed */
+  z-index: 0;
+}
+
+.gradient-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 6.25rem; /* Adjust the height of the gradient fade */
+  background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,1)); /* Adjust the gradient colors */
+  pointer-events: none; /* Ensure the overlay doesn't interfere with mouse events on the video */
+}
+
+img {
+  max-width: 100vw;
+  height: auto;
+  z-index: -1; /* Send the image to the background */
+}
+
+.air {
+  margin-right: 6.25rem; /* Adjust the margin to introduce space between elements */
+}
+
+.toright {
+  display: block;
+  text-align: right;
+}
+
+.centered-text {
+  text-align: center;
+  padding-right: 40%;
+}
+
+.italic-footer {
+  font-family: 'Aptos';
+  font-style: italic;
+  font-size: 0.875rem;
+}
+
+.italic-text {
+  font-family: 'Aptos';
+  font-style: italic;
+  font-size: 1.25rem;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.center {
+  text-align: center;
+}
+
+.regular {
+  font-family: 'Aptos';
+  font-style: normal;
+  font-size: 1.25rem;
+}
+
+.right-lighter {
+  text-align: right;
+  padding-left: 10%;
+  font-family: 'Urbanist-Italic', sans-serif, italic;
+  font-size: 1.063rem;
+  line-height: 1.5;
+}
+
+.normal-text {
+  padding-left: 16.6%;
+  line-height: inherit;
+}
+
+.Times {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: lighter;
+  font-size: 2.5vh;
+  text-align: center;
+  margin-right: 30rem;
+  margin-left: -10rem;
+  padding-left: 30rem;
+}
+
+.samantha {
+  height: auto; /* Set height to auto to maintain aspect ratio */
+  width: 50%; /* Adjust width as needed */
+  margin: 0 auto; /* Center horizontally */
+  display: flex;
+  flex-direction: column; /* Ensure the footer appears below the image */
+}
+
+.samantha img {
+  display: block; /* Ensure the image fills the container width */
+  margin: 0 auto; /* Center horizontally */
+}
+
+.stacked-images {
+  width: 12.5rem; /* Adjust the width as needed */
+  position: absolute; /* Ensure positioning context for absolute positioning */
+  right: 6.25rem;
+  padding-top: 0.938rem;
+  overflow: hidden; /* Hide overflowing content */
+}
+
+.image-container {
+  transition: max-height 1s ease; /* Apply transition effect */
+  max-height: auto; /* Allow the first image to be fully visible */
+  overflow: hidden; /* Hide overflowing content */
+}
+
+.stacked-images .image-container:not(:first-child) {
+  max-height: 0; /* Initially hide images */
+}
+
+.stacked-images:hover .image-container {
+  max-height: 31.25rem; /* Set to a value greater than the total height of images */
+}
+
+.stacked-images img {
+  width: 100%; /* Adjust image width to fill container */
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: 1.25rem; /* Adjust the bottom margin to create space between images */
+  opacity: 100%;
+}
+
+.footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  text-align: center; /* Center align text */
+  padding: 0.625;
+  box-sizing: border-box; /* Include padding in width calculation */
+  margin-top: auto;
+}
+
+.footer-text {
+  margin: 0; /* Remove default margin */
+  text-align: center; /* Center align text */
+  font-size: 0.875rem; /* Example font size */
+  color: #d2d2d2; /* Example text color */
+}
+
+.container {
+  position: relative; /* Ensure positioning context for absolute positioning */
+  display: flex;
+  max-width: 50rem; /* Adjust this value as needed */
+  margin: 0 auto;
+  flex-direction: column;
+}
+
+p {
+  margin-top: 0; /* Remove default margin */
+  z-index: 1;
+  padding: 0;
+  font-family: 'Aptos';
+  font-size: 2rem;
+  margin-left: 5rem;
+  margin-right: 5rem;
+  line-height: 1.2;
+  width: 100%;
+}
+
+a {
+  color: var(--color-text-link);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-text-link-hover);
+  text-decoration: none;
+}
+
+img {
+  z-index: 2;
+  text-align: center;
+}
+
+.IMAGINARY-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.IMAGINARY {
+  width: 50%; /* Each image takes up 48% of the container width */
+  box-sizing: border-box; /* Include padding and border in the width */
+  margin: 0 -6%; /* Adjust the margin to reduce the gap between columns */
+  padding: 0.625rem; /* Add some padding between images */
+  text-align: center;
+}
+
+.IMAGINARY img {
+  max-width: 70%;
+  height: auto;
+}
+
+h1{
+  font-family: "Lineal-Bold";
+  color: #dbdbdb;
+  font-size: 6.25rem;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  top: 0;
+}
+
+h2{
+  font-family: "Lineal";
+  color: #ffffff;
+  font-size: 10rem;
+  width: 100vw; /* Cover the entire viewport width */
+  height: 100vh; /* Cover the entire viewport height */
+  margin: 0; /* Remove any default margin */
+  padding: 0; /* Remove any default padding */
+  text-align: left;
+  line-height: 10rem;
+}
+
+.indented-paragraph {
+  padding-left: 5.625rem; /* Adjust the value according to your preference */
+  font-size: 1.25rem;
+}
+
+h3, h4, h5, h6 {
+  font-family: "Lineal";
+  font-size: 15rem;
+  margin-top: -3.125rem;
+  margin-bottom: 0.938rem;
+  margin-right: 0rem;
+  margin-left: 0rem;
+  text-align: center;
+  z-index: 1;
+}
+
+.verde {
+  color: #57af43;
+}
+
+div.page-wrapper {
+  /* the element that 'wraps' everything */
+  padding: var(--margin);
+}
+
+/* Styling for mobile navigation */
+#mobile-nav {
+  position: fixed;
+  display: none; /* Initially hide the mobile navigation */
+  font-family: "Lineal";
+  font-size: 2rem;
+  margin-top: 0rem;
+  margin-left: 30vh;
+  z-index: 1000;
+}
+
+#mobile-nav ul {
+  display: block;
+  background-color: #000000;
+  border: 0.125rem solid #7e8c37;
+  border-radius: 0.313rem;
+}
+
+#mobile-nav a {
+  text-decoration: underline;
+  text-decoration-color: #7e8c37;
+}
+
+#index-toggle {
+  position: fixed;
+  font-size: 2rem;
+  color: #7e8c37;
+  margin-top: 2rem;
+  margin-left: 5vh;
+  z-index: 999;
+  padding: 0.313rem;
+  font-family: 'Lineal';
+  background-color: #000000;
+  border: 0.125rem solid #7e8c37;
+  border-radius: 0.313rem;
+}
+
+#index-toggle a {
+  background-color: #000000;
+  color: #b42e31;
+  border: 0.125rem solid #ffffff;
+  border-radius: 0.313rem;
+  cursor: pointer;
+  display: none;
+  text-decoration: none;
+}
+
+#index-content {
+  position: fixed;
+  bottom: 7.5rem;
+  right: 1.25rem;
+  width: 18.75rem;
+  max-height: 18.75rem;
+  background-color: #000000;
+  overflow-y: auto;
+  padding: 0.625rem;
+  display: none;
+}
+
+#index-content p {
+  width: 100%;
+  margin-bottom: 0.625rem;
+  font-size: 0.938rem;
+  line-height: 1.6;
+  margin-left: 0;
+}
+
+#toggle-index:checked ~ #index-content {
+  display: none; /* Show the content when checkbox is checked */
+}
+
+#source-toggle {
+  position: fixed;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  z-index: 999; /* Ensure it's on top of other elements */
+  border: 0.125rem solid #ffffff;
+  border-radius: 0.313rem;
+  padding: 0.313rem;
+  font-family: 'Lineal';
+  background-color: #000000;
+  mix-blend-mode: exclusion;
+  display: none;
+}
+
+#source-toggle *,
+#source-content * {
+  mix-blend-mode: exclusion;
+  display: none;
+}
+
+#source-toggle a {
+  background-color: #000000;
+  color: #b42e31;
+  border: 0.125rem solid #ffffff;
+  border-radius: 0.313rem;
+  cursor: pointer;
+  text-decoration: none;
+  display: none;
+}
+
+#source-content {
+  position: fixed;
+  bottom: 7.5rem;
+  right: 1.25rem;
+  width: 18.75rem; /* Adjust as needed */
+  max-height: 18.75rem; /* Adjust as needed */
+  background-color: #000000;
+  border: 0.125rem solid #ffffff;
+  border-radius: 0.313rem;
+  overflow-y: auto;
+  padding: 0.625rem;
+  display: none;
+}
+
+#source-content p {
+  width: 100%;
+  margin-bottom: 0.625rem;
+  font-size: 0.938rem;
+  line-height: 1.6;
+  margin-left: 0; /* Remove left margin */
+  display: none;
+}
+
+#toggle-source:checked ~ #source-content {
+  display: none;
+}
 
 
   /* utility classes, mobile */
