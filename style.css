@@ -460,11 +460,6 @@ a:hover {
   text-decoration: none;
 }
 
-img {
-  z-index: 2;
-  text-align: right;
-}
-
 .IMAGINARY-container {
   display: flex;
   flex-wrap: wrap;
@@ -548,7 +543,6 @@ nav {
   padding-bottom: 10px; /* Add padding */
   padding-right: 0px; /* Add padding */
   z-index: 1000; /* Ensure it's above other content */
-
 }
 
 nav ul {
@@ -691,16 +685,6 @@ header {
     background-color: var(--color-background);
   }
   
-  body {
-    position: relative;
-    background-color: var(--color-background);
-    font: var(--font-size) var(--font-family);
-    color: var(--color-text);
-    width: 100%;
-    height: auto;
-    overflow-y: auto;
-  }
-  
   .title-container {
     position: relative;
     text-align: center;
@@ -739,6 +723,95 @@ p {
   z-index: 1;
   font-family: 'Aptos';
   font-size: 15px;
+  width: 100%;
+  margin-left: 15px;
+}
+
+.indented-paragraph {
+  padding-left: 30px; /* Adjust the value according to your preference */
+  font-size: 15px;
+  margin-left: 0;
+  width: 100%;
+}
+
+h1{
+  font-family: "Lineal-Bold";
+  color: #dbdbdb;
+  font-size: 100px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+h2{
+  font-family: "Lineal";
+  color: #ffffff;
+  font-size: 50px;
+  width: 100%;
+  padding-left: 0px;
+  text-align: center;
+}
+
+nav {
+  position: sticky; /* Make the header sticky */
+  top: 0; /* Stick the header to the top of the viewport */
+  font-family: "Lineal";
+  width: 100%;
+  font-size: 15px;
+  background-color: #000000; /* Set background color */
+  padding-top: 10px; /* Add padding */
+  padding-bottom: 10px; /* Add padding */
+  padding-right: 0px; /* Add padding */
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+#index-toggle {
+  position: fixed;
+  font-size: 2rem;
+  color: #7e8c37;
+  margin-top: 2rem;
+  margin-left: 5vh;
+  z-index: 999;
+  padding: 0.313rem;
+  font-family: 'Lineal';
+  background-color: #000000;
+  border: 0.125rem solid #7e8c37;
+  border-radius: 0.313rem;
+}
+
+#index-toggle a {
+  background-color: #000000;
+  color: #b42e31;
+  border: 0.125rem solid #ffffff;
+  border-radius: 0.313rem;
+  cursor: pointer;
+  
+  text-decoration: none;
+}
+
+#index-content {
+  position: fixed;
+  bottom: 7.5rem;
+  right: 1.25rem;
+  width: 18.75rem;
+  max-height: 18.75rem;
+  background-color: #000000;
+  overflow-y: auto;
+  padding: 0.625rem;
+  display: none;
+}
+
+#index-content p {
+  width: 100%;
+  margin-bottom: 0.625rem;
+  font-size: 0.938rem;
+  line-height: 1.6;
+  margin-left: 0;
+}
+
+#toggle-index:checked ~ #index-content {
+  display: none; /* Show the content when checkbox is checked */
 }
 
 }
