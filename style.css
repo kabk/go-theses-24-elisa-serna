@@ -36,7 +36,7 @@
 
 @font-face {
   font-family: 'Times New Roman';
-  src: url('assets/fonts/TimesNewRoman/Times\ New\ Roman.ttf');
+  src: url('assets/fonts/TimesNewRoman/Times\New\ Roman.ttf');
   font-weight: normal;
   font-style: bold;
   font-display: block;
@@ -178,6 +178,10 @@ img {
     z-index: 1000;
   }
 
+  main {
+    padding: 0.5%;
+  }
+
   .container-3:hover img {
     transform: scale(5); /* Scale the image to 1.2 times its original size on hover */
     z-index: 1000;
@@ -310,7 +314,8 @@ img {
   }
 
 .air {
-  margin-right: 100px; /* Adjust the margin to introduce space between elements */
+  margin-right: 0px; /* Adjust the margin to introduce space between elements */
+  padding-right: 5%;
 }
 
 .toright {
@@ -351,7 +356,7 @@ img {
 
 .right-lighter {
   text-align: right;
-  padding-left: 10%;
+  padding-left: 0%;
   font-family: 'Urbanist-Italic', sans-serif, italic;
   font-size: 1em;
   line-height: 1.5;
@@ -367,7 +372,7 @@ img {
   font-weight: lighter;
   font-size: 2.5vh;
   text-align: center;
-  padding-left: 30em;
+  /*padding-left: 30em;*/
 }
 
 .samantha {
@@ -444,8 +449,8 @@ p {
   padding: 0;
   font-family: 'Aptos';
   font-size: 20px;
-  margin-left: 15rem;
-  margin-right: 22rem;
+  margin-left: 20%;
+  margin-right: 20%;
 }
 
 a {
@@ -502,7 +507,7 @@ h2{
 }
 
 .indented-paragraph {
-  padding-left: 90px; /* Adjust the value according to your preference */
+  /*padding-left: 90px; /* Adjust the value according to your preference */
   font-size: 20px;
 }
 
@@ -684,12 +689,12 @@ header {
   }
   
   .title-container {
-    position: relative;
+    /*position: relative;*/
     text-align: center;
     width: 100%;
     z-index: 1; /* Ensures the title appears above the video */
     color: #ffffff; /* Set title text color */
-    font-size: 24px; /* Adjust title font size */
+    font-size: 20rem; /* Adjust title font size */
  }
 
  #video-container {
@@ -717,12 +722,16 @@ p {
   z-index: 1;
   font-family: 'Aptos';
   font-size: 15px;
-  width: 100%;
-  margin-left: 15px;
+  /*width: 100%;*/
+  /*margin-left: 15px;*/
+  margin-left: 0px;
+  margin-right: 0px;
 }
 
 .indented-paragraph {
-  padding-left: 30px; /* Adjust the value according to your preference */
+  /*padding-left: 0px; /* Adjust the value according to your preference */
+  padding-left: 10%;
+  max-width: 85%;
   font-size: 15px;
   margin-left: 0;
   width: 100%;
@@ -830,9 +839,43 @@ nav {
   overflow: hidden; /* Hide overflowing content */
 }
 
+.image-container {
+  transition: none; /* Apply transition effect */
+  max-height: auto; /* Allow the first image to be fully visible */
+  overflow: hidden; /* Hide overflowing content */
 }
 
+.stacked-images img {
+  width: 100%; /* Adjust image width to fill container */
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: 0px; /* Adjust the bottom margin to create space between images */
+  opacity: 100%;
+}
 
+.Times {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: lighter;
+  text-align: left;
+  margin-left: 0;
+}
+
+.air {
+  margin-right: 0px; /* Adjust the margin to introduce space between elements */
+}
+
+.right-lighter {
+  text-align: right;
+  padding-left: 0px;
+  font-family: 'Urbanist-Italic', sans-serif, italic;
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+nav ul {
+  flex-direction: column;
+}
+
+}
 
 /* use this query to apply style changes to smaller smartphones sizes (like an iPhone 5S or SE 2016), max size of 339px */
 
